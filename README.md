@@ -4,6 +4,7 @@
  * This repo provides a basic Kubernetes implementation on OpenStack VMs using static routing.
 
 * Diagram
+![Network Diagram](https://raw.githubusercontent.com/lachie83/kubernetes-openstack/master/diagrams/k8s-openstack-logical-diagram.png)
 
 * Design Details
  * Each VM has a single interface provided by the OpenStack overlay network (eth0 in this case).
