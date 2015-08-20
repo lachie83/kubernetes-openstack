@@ -1,12 +1,12 @@
 # Kubernetes OpenStack
 
-* Overview
- * This repo provides a basic Kubernetes implementation on OpenStack VMs using static routing.
+## Overview
+This repo provides a basic Kubernetes implementation on OpenStack VMs using static routing.
 
-* Diagram
+## Diagram
 ![Network Diagram](https://raw.githubusercontent.com/lachie83/kubernetes-openstack/master/diagrams/k8s-openstack-logical-diagram.png)
 
-* Design Details
+## Design Details
  * Each VM has a single interface provided by the OpenStack overlay network (eth0 in this case).
  * Kubernetes nodes run docker-engine. Each docker-engine is configure to bind to an allocated address block and provide access to the running containers using the docker0 bridge interface.
   * k8s-node-01 - 10.2.2.1/24
