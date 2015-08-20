@@ -1,0 +1,12 @@
+# Kube-Scheduler Upstart and SysVinit configuration file
+
+# Customize kube-apiserver binary location
+# KUBE_SCHEDULER="/opt/bin/kube-apiserver"
+
+$IP=$(/sbin/ifconfig eth0 | grep 'inet addr:' | cut -d: -f2 | awk '{ print $1}')
+
+# Use KUBE_SCHEDULER_OPTS to modify the start/restart options
+KUBE_SCHEDULER_OPTS="--logtostderr=false --log_dir=/var/log/kubernetes \
+  --master=$IP:8080 --address=$IP"
+
+# Add more environment settings used by kube-scheduler here
