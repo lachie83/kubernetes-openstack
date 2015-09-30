@@ -3,10 +3,11 @@
 # Customize kube-apiserver binary location
 # KUBE_SCHEDULER="/opt/bin/kube-apiserver"
 
-$IP=$(/sbin/ifconfig eth0 | grep 'inet addr:' | cut -d: -f2 | awk '{ print $1}')
+IP=$(/sbin/ifconfig eth0 | grep 'inet addr:' | cut -d: -f2 | awk '{ print $1}')
 
 # Use KUBE_SCHEDULER_OPTS to modify the start/restart options
-KUBE_SCHEDULER_OPTS="--logtostderr=false --log_dir=/var/log/kubernetes \
-  --master=$IP:8080 --address=$IP"
+KUBE_SCHEDULER_OPTS="--master=127.0.0.1:8080 \
+                     --address=$IP \
+                     --v=2"
 
 # Add more environment settings used by kube-scheduler here

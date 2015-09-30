@@ -1,0 +1,10 @@
+# Kube-Proxy Upstart and SysVinit configuration file
+
+# Customize kube-proxy binary location
+# KUBE_PROXY="/opt/bin/kube-proxy"
+
+# Use KUBE_PROXY_OPTS to modify the start/restart options
+KUBE_PROXY_OPTS="--master=http://kube-master-01.sj.lithium.com:8080 \
+                 --v=2"
+
+# Add more environment settings used by kube-apiserver here
